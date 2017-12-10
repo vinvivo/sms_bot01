@@ -84,9 +84,9 @@ def getReply(message):
     # return the formulated answer
     return answer
 
-""" Now our message format is as follows: “Keyword_request”. However, you cannot
-    put in “wolfram calories in bread” into wolfram alpha. However, you can put
-    in “calories in bread”. So now we have to take out “wolfram” from the message
+""" Now our message format is as follows: "Keyword_request". However, you cannot
+    put in "wolfram calories in bread" into wolfram alpha. However, you can put
+    in "calories in bread". So now we have to take out "wolfram" from the message
     to isolate the request. We can do so with the following method:
 """
 # Function for editing input text to remove keyword from search terms.
@@ -100,11 +100,11 @@ def removeHead(fromThis, removeThis):
 
 """ It’s time to put in the APIs. We will be using Wolfram Alpha, Wikipedia,
     and yWeather. All have amazing documentation online, so I won’t be going
-    much into how to formulate each “if statement” in the getReply method. For
+    much into how to formulate each "if statement" in the getReply method. For
     Wolfram Alpha you will need to go to their API site to get an API key.
     Wikipedia and yWeather do not require keys.
-    Let’s set up the Wikipedia API. Go to terminal and type in “pip install
-    wikipedia”. Now go to the Wikipedia if statement in the getReply method
+    Let’s set up the Wikipedia API. Go to terminal and type in "pip install
+    wikipedia". Now go to the Wikipedia if statement in the getReply method
     and add the following:
 """
 
