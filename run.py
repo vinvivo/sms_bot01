@@ -17,7 +17,7 @@ def sms():
 
     # Create a Twilio response object to be able to send a reply back (as per
     # Twilio docs)
-    resp = MessagingResponse
+    resp = MessagingResponse()
 
     # Send the message body to the getReply message, where
     # we will query the String and formulate a response
