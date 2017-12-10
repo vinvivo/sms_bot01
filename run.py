@@ -98,12 +98,12 @@ def removeHead(fromThis, removeThis):
     
     return fromThis
 
-""" It’s time to put in the APIs. We will be using Wolfram Alpha, Wikipedia,
-    and yWeather. All have amazing documentation online, so I won’t be going
+""" It's time to put in the APIs. We will be using Wolfram Alpha, Wikipedia,
+    and yWeather. All have amazing documentation online, so I won't be going
     much into how to formulate each "if statement" in the getReply method. For
     Wolfram Alpha you will need to go to their API site to get an API key.
     Wikipedia and yWeather do not require keys.
-    Let’s set up the Wikipedia API. Go to terminal and type in "pip install
+    Let's set up the Wikipedia API. Go to terminal and type in "pip install
     wikipedia". Now go to the Wikipedia if statement in the getReply method
     and add the following:
 """
