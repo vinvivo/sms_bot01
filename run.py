@@ -1,6 +1,8 @@
 # import all the libraries we will be using
 from flask import Flask, request
-from twilio import twiml
+from twilio.twiml.messaging_response import Message, MessagingResponse
+import wolframalpha
+import wikipedia
 
 # set up Flask to connect this code to the local host, which will
 # later be connected to the internet through Ngrok
@@ -14,10 +16,11 @@ app = Flask(__name__)
 def sms():
     # Get the text in the message sent
     message_body = request.form['Body']
+    print message_body
 
     # Create a Twilio response object to be able to send a reply back (as per
     # Twilio docs)
-    resp = twiml.messaging_response()
+    resp = MessagingResponse()
 
     # Send the message body to the getReply message, where
     # we will query the String and formulate a response
@@ -25,7 +28,7 @@ def sms():
 
 	# Text back our response!
     resp.message('Hi\n\n' + replyText)
-    print(resp)
+    print resp
     return str(resp)
 
 # when you run the code through terminal, this will allow Flask to work
