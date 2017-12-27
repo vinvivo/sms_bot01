@@ -1,8 +1,7 @@
 # import all the libraries we will be using
-from flask import Flask, request
+from flask import Flask, request, redirect
 from twilio.twiml.messaging_response import Message, MessagingResponse
-import wolframalpha
-import wikipedia
+
 
 # set up Flask to connect this code to the local host, which will
 # later be connected to the internet through Ngrok
@@ -15,7 +14,7 @@ app = Flask(__name__)
 @app.route('/', methods=['POST'])
 def sms():
     # Get the text in the message sent
-    message_body = request.form['Body']
+    message_body = request.values.get('Body', None)
     print message_body
 
     # Create a Twilio response object to be able to send a reply back (as per
@@ -31,9 +30,9 @@ def sms():
     print resp
     return str(resp)
 
-# when you run the code through terminal, this will allow Flask to work
-if __name__ == '__main__':
-    app.run()
+    # when you run the code through terminal, this will allow Flask to work
+    if __name__ == '__main__':
+        app.run(debug=True)
 
 """ Now we need to create a getReply method. This method will simply look
     through our text message body and figure out the type of information we
@@ -63,8 +62,8 @@ def getReply(message):
 
         # Get the wikipedia summary for the request
         try:
-            # Get the summary off Wikipedia
-            answer = wikipedia.summary(message)
+            # Get the summary from Wikipedia
+            answer = "get a response from the Wikipedia API"
         except:
             # handle errors or non-specificity errors (e.g., too many results)
             answer = "Request was not found using wiki. Be more specific?"
@@ -111,4 +110,5 @@ def removeHead(fromThis, removeThis):
     wikipedia". Now go to the Wikipedia if statement in the getReply method
     and add the following:
 """
+
 
