@@ -1,12 +1,12 @@
 from twilio.rest import Client
 
-account_sid = "AC05c492100ba229f40bd463f0c99da9b2"
-auth_token = " bf7c0153a0a3ff0dc7fa2ad5e0b532be"
+account_sid = "ENTER ACCOUNT SID HERE"
+auth_token = "ENTER AUTH_TOKEN HERE"
 
 client = Client(account_sid, auth_token)
 
 message = client.messages.create(
-    to = "+14153007522",
+    to = "ENTER PHONE NUMBER HERE",     # +1234567890 format
     from_ = "+14159657284",
     body = "Hello from Python!"
 )
